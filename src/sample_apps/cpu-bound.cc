@@ -19,6 +19,7 @@ int main(int argc, char ** argv) {
 		}
 	}
 	
-	cout << heap[1023] << endl;
-	return 0;
+	float output = heap[1023];
+	cout << output << endl;
+	return output;
 }
