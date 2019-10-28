@@ -3,9 +3,7 @@
 
 using namespace std;
 
-int main(int argc, char ** argv) {
-	float iters = atof(argv[1]);
-	float input = atof(argv[2]);
+float cpu_bound(int iters, float input) {
 
 	float heap[1024];
 	for(int i = 1; i < 1024; i++) {
@@ -19,7 +17,5 @@ int main(int argc, char ** argv) {
 		}
 	}
 	
-	float output = heap[1023];
-	cout << output << endl;
-	return output;
+	return heap[1023];
 }

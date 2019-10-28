@@ -1,5 +1,9 @@
 CC = g++
-CFLAGS = -Wall -Werror
+CFLAGS = -Wall -Werror -c
+WORKER_FLAGS = -O0
 
 workers:  
-	${CC} ${CFLAGS} -O0 -o targets/cpu-bound src/sample_apps/cpu-bound.cc
+	${CC} ${CFLAGS} ${WORKER_FLAGS} -o targets/cpu-bound.o src/sample_apps/cpu-bound.cc
+
+all: workers
+	${CC} ${CFLAGS} -o targets/spacewhale src/main.cc targets/cpu-bound.o

@@ -1,2 +1,3 @@
 Tracer/*
 targets/*
+!targets/.keep
