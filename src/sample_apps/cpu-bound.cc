@@ -17,5 +17,5 @@ float cpu_bound(int iters, float input) {
 		}
 	}
 	
-	return heap[1023];
+	return heap[1023] - (int) heap[1023];
 }
