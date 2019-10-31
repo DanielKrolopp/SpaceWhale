@@ -8,6 +8,7 @@ int main(int argc, char ** argv) {
     
 	int iters = atoi(argv[1]);
 	char *ip = argv[2];
+	fault_prob = atof(argv[3]);
 	receiveinit();
 	cout << "Waiting on input..." << endl;
 	float input = receivemsg();

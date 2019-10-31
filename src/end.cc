@@ -7,6 +7,7 @@ using namespace std;
 int main(int argc, char ** argv) {
         
 	int iters = atoi(argv[1]);
+	fault_prob = atof(argv[2]);
 	receiveinit();
 	cout << "Waiting on input..." << endl;
 	float input = receivemsg();
