@@ -9,8 +9,6 @@ void receiveinit(char * ip_text, uint16 remote_port, uint16 local_port) {
 	uint32 ip = 0;
 	dot2ip(ip_text, &ip);
 	recv_slot = udp_register(ip, remote_port, local_port);
-	kprintf("receive slot: %d\n", recv_slot);
-	// kprintf("receive ip: %s (%x) : %d\n", ip_text, ip, local_port);
 }
 
 int receivemsg() {

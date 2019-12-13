@@ -627,7 +627,12 @@ extern	uid32	send_slot;
 extern	int		received;
 
 extern	int		memerr(char);
+extern	void	print_errors();
 extern	process	rambo(int, char);
+extern	int	bssflips;
+extern	int	textflips;
+extern	int	dataflips;
+extern	int	otherflips;
 extern	uint32	ms;
 extern	uint32	currtime;
 

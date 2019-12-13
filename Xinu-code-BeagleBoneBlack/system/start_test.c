@@ -13,4 +13,5 @@ void start_test(int iters, int input) {
 	sendmsg(result);
 	kprintf("Result sent!\n");
 	kprintf("Wait time: %d, compute time: %d\n", wait_time, compute_time);
+	print_errors();
 }

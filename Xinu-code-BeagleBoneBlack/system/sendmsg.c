@@ -15,6 +15,5 @@ void sendinit(char * ip_text, uint16 remote_port, uint16 local_port) {
 void sendmsg(int message) {
 	char buf[16];
 	sprintf(buf, "%d", message);
-	kprintf("Sending %s\n", buf);
     udp_send(send_slot, buf, 16);
 }
