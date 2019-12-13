@@ -626,8 +626,10 @@ extern	uid32	recv_slot;
 extern	uid32	send_slot;
 extern	int		received;
 
-extern	int	memerr(char);
+extern	int		memerr(char);
+extern	process	rambo(int, char);
 extern	uint32	ms;
+extern	uint32	currtime;
 
 /* NETWORK BYTE ORDER CONVERSION NOT NEEDED ON A BIG-ENDIAN COMPUTER */
 #define	htons(x)   ( ( 0xff & ((x)>>8) ) | ( (0xff & (x)) << 8 ) )
