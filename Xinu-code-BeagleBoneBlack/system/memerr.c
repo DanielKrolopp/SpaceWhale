@@ -2,6 +2,11 @@
 #include <stdlib.h>
 #include "headers/sample.hh"
 
+int bssflips  = 0;
+int dataflips = 0;
+int textflips = 0;
+int otherflips = 0;
+
 float fault_prob;
 
 float floatrand()
@@ -10,6 +15,7 @@ float floatrand()
 }
 
 int memerr(char where){
+	kprintf("\n");
 	uint32 corruptstart;
 	uint32 corruptstop;
 
@@ -37,11 +43,13 @@ int memerr(char where){
 			kprintf("Flipping a bit in BSS, text, or data\n");
 			corruptstart = (uint32) &text;
 			corruptstop = (uint32) &ebss;
+			break;
 		// 'All' (All possible memory)
 		case 'a':
 			kprintf("Flipping a bit anywhere in memory\n");
 			corruptstart = (uint32) &text;
 			corruptstop = (uint32) &end;
+			break;
 		default:
 			kprintf("Invalid corruption section requested\n");
 			return -1;
@@ -49,12 +57,25 @@ int memerr(char where){
 	}
 
 	// Pick a byte
-	//uint32 currtime = 0;
-	//gettime(&currtime);
-	//srand(currtime);
 	uint32 byteindex = rand() % (corruptstop - corruptstart);
-	kprintf("Byte to corrupt: 0x%08x\n", byteindex);
+	kprintf("Byte to corrupt: 0x%08x\n", corruptstart + byteindex);
 
+	// Find out where the byte is and increment the appropiate counter
+	if( corruptstart + byteindex < (uint32) &etext ){
+		kprintf("Incrementing text counter\n");
+		textflips++;
+	}else if( corruptstart + byteindex < (uint32) &edata ){
+		kprintf("Incrementing data counter\n");
+		dataflips++;
+	}else if( corruptstart + byteindex < (uint32) &ebss ){
+		kprintf("Incrementing bss counter\n");
+		bssflips++;
+	}else{
+		kprintf("Incrementing other counter\n");
+		otherflips++;
+	}
+	
+	
 	unsigned short bitindex = rand() % 8;
 	kprintf("Bit to corrupt: %d\n", bitindex);
 

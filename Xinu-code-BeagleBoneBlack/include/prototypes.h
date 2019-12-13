@@ -627,6 +627,10 @@ extern	uid32	send_slot;
 extern	int		received;
 
 extern	int	memerr(char);
+extern	int	bssflips;
+extern	int	textflips;
+extern	int	dataflips;
+extern	int	otherflips;
 extern	uint32	ms;
 
 /* NETWORK BYTE ORDER CONVERSION NOT NEEDED ON A BIG-ENDIAN COMPUTER */

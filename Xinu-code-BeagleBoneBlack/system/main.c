@@ -15,7 +15,13 @@ process	main(void)
 	kprintf("The BSS  segment ranges from 0x%08x to 0x%08x (Total size: %d)\n", (uint32) &bss,  (uint32) &ebss, &ebss - &bss);
 
 	kprintf("starting test...\n");
-	start_test(100, 314);
+	memerr('b');
+	memerr('t');
+	memerr('d');
+	memerr('m');
+	memerr('a');
+	
+	//start_test(100, 314);
 	kprintf("finished test...\n");
 
 	return OK;
