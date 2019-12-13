@@ -1,3 +1,5 @@
 Tracer/*
 targets/*
 !targets/.keep
+Xinu-code-BeagleBoneBlack/compile/*
+Xinu-code-BeagleBoneBlack/cross_compiler/*
