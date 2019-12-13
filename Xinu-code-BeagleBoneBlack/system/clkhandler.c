@@ -27,6 +27,7 @@ void	clkhandler()
 	/* Increment 1000ms counter */
 
 	count1000++;
+	ms++;
 
 	/* After 1 sec, increment clktime */
 

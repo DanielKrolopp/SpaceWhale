@@ -6,6 +6,7 @@ uint32	clktime;		/* Seconds since boot			*/
 uint32  count1000;              /* ms since last clock tick             */
 qid16	sleepq;			/* Queue of sleeping processes		*/
 uint32	preempt;		/* Preemption counter			*/
+uint32	ms;
 
 /*------------------------------------------------------------------------
  * clkinit  -  Initialize the clock and sleep queue at startup
@@ -65,6 +66,7 @@ void	clkinit(void)
 	/* Kickstart the timer */
 
 	csrptr->ttgr = 1;
+	ms = 0;
 
 	return;
 }
