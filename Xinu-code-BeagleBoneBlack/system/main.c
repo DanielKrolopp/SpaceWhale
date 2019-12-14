@@ -16,11 +16,16 @@ process	main(void)
 	kprintf("The BSS  segment ranges from 0x%08x to 0x%08x (Total size: %d)\n", (uint32) &bss,  (uint32) &ebss, &ebss - &bss);
 	
 	kprintf("starting test...\n");
-	uint32 mean_fault_frequency = 10000; // in ms (1000 / mff = faults / second)
-	resume(create(rambo, INITSTK, 100, "rambo", 2, mean_fault_frequency, 'b', NULL)); 
+	uint32 mean_fault_frequency = 1000; // in ms (1000 / mff = faults / second)
+	resume(create(rambo, INITSTK, 100, "rambo", 2, mean_fault_frequency, 'a', NULL)); 
+	
+	// Experiment 1
+	// start_test(100, 314);
 
-	start_test(100, 314);
-	kprintf("finished test...\n");
+	// Experiment 2
+	//start_voter_test(3, 60, 47906);
+	 end_voter_test();
+	// kprintf("finished test...\n");
 
 	return OK;
 }

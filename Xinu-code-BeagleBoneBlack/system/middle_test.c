@@ -1,4 +1,4 @@
-#include <xinu.h>
+/*#include <xinu.h>
 #include "headers/sample.hh"
 #include "headers/pipeline.hh"
 
@@ -17,4 +17,4 @@ void middle_test(int iters) {
 	kprintf("Result sent!\n");
 	kprintf("Wait time: %d, compute time: %d\n", wait_time, compute_time);
 	print_errors();
-}
+}*/

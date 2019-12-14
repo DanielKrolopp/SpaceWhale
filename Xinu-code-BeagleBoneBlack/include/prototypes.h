@@ -613,14 +613,17 @@ extern	syscall	yield(void);
 extern	void	start_test(int, int);
 extern	void	middle_test(int);
 extern	void	end_test(int);
+extern	void	end_voter_test();
 
 #define BEAGLE160	"128.10.137.160"
 #define BEAGLE161	"128.10.137.161"
 #define BEAGLE162	"128.10.137.162"
+#define BEAGLE163	"128.10.137.163"
 
 #define	PORT160		9160
 #define	PORT161		9161
 #define	PORT162		9162
+#define	PORT163		9163
 
 extern	uid32	recv_slot;
 extern	uid32	send_slot;
